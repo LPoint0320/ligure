@@ -12,3 +12,5 @@ Thumbs.db
 # Temp
 *.log
 .DS_Store
+
+truth-or-dare/
