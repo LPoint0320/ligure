@@ -1,0 +1,14 @@
+﻿# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Temp
+*.log
+.DS_Store
