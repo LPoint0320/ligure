@@ -1,40 +1,27 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <title>Ligure — Home</title>
-    <meta name="description" content="Ligure — 个人主页">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Ligure — Home</title>
+<meta name="description" content="Ligure — 个人主页">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
-<!-- Orbit — Corner Menu -->
 <div class="orbit-control">
-    <button class="orbit-trigger" id="orbitTrigger" title="Menu">…</button>
-    <div class="orbit-menu" id="orbitMenu">
-        <div class="orbit-user">
-            <div class="orbit-avatar">L</div>
-            <span class="orbit-name">Ligure</span>
-        </div>
+    <button class="orbit-trigger" id="ot">…</button>
+    <div class="orbit-menu" id="om">
+        <div class="orbit-user"><div class="orbit-avatar">L</div><span class="orbit-name">Ligure</span></div>
         <div class="orbit-divider"></div>
-        <button class="orbit-item active" data-page="home">
-            <span class="orbit-icon">✦</span> Home
-        </button>
-        <button class="orbit-item" data-page="about">
-            <span class="orbit-icon">◉</span> About
-        </button>
-        <button class="orbit-item" data-page="works">
-            <span class="orbit-icon">◇</span> Works
-        </button>
-        <button class="orbit-item" data-page="contact">
-            <span class="orbit-icon">◎</span> Contact
-        </button>
+        <button class="orbit-item active" data-page="hero"><span class="orbit-icon">✦</span> Home</button>
+        <button class="orbit-item" data-page="about"><span class="orbit-icon">◉</span> About</button>
+        <button class="orbit-item" data-page="works"><span class="orbit-icon">◇</span> Works</button>
+        <button class="orbit-item" data-page="contact"><span class="orbit-icon">◎</span> Contact</button>
     </div>
 </div>
 
-<!-- Nav -->
 <nav class="nav">
     <a href="#" class="nav-brand">Ligure<span class="nav-brand-dot">.</span></a>
     <ul class="nav-menu">
@@ -44,17 +31,13 @@
         <li><button class="nav-link" data-section="contact"><div class="nav-link-row"><span class="nav-link-index">04</span><span class="nav-link-name">Contact</span></div></button></li>
     </ul>
     <button class="theme-toggle" title="Auto">◐</button>
-    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger"><span></span><span></span><span></span></button>
 </nav>
 
 <div class="mobile-menu">
-    <a href="#hero">· Home</a>
-    <a href="#about">· About</a>
-    <a href="#works">· Works</a>
-    <a href="#contact">· Contact</a>
+    <a href="#hero">· Home</a><a href="#about">· About</a><a href="#works">· Works</a><a href="#contact">· Contact</a>
 </div>
 
-<!-- ============ HERO ============ -->
 <section id="hero" class="hero">
     <div class="hero-copy fade-in">
         <p class="hero-eyebrow">✦ Hello, World</p>
@@ -65,12 +48,9 @@
             <a href="#contact" class="btn btn-outline">联系我</a>
         </div>
     </div>
-    <div class="hero-visual fade-in">
-        <div class="hero-avatar">👋</div>
-    </div>
+    <div class="hero-visual fade-in"><div class="hero-avatar">👋</div></div>
 </section>
 
-<!-- ============ ABOUT (Panel) ============ -->
 <section id="about" class="panel curves">
     <div class="cc">
         <div class="panel-inner">
@@ -78,154 +58,60 @@
                 <div class="panel-index">ABOUT</div>
                 <h2 class="panel-title">关於我</h2>
                 <div class="panel-desc">
-                    <p>我是一名热爱技术的创作者。从第一次接触到代码，就被创造的感觉深深吸引。</p>
+                    <p>我是一名热爱技术的创作者，从第一次接触代码就被创造的感觉深深吸引。</p>
                     <p>前端、后端、设计，我都乐于探索，追求优雅与实用的平衡。</p>
                 </div>
             </div>
             <div class="panel-right fade-in">
                 <div style="display:flex;flex-direction:column;gap:14px;width:100%">
-                    <div style="display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;background:var(--card-bg);border:1px solid var(--border-color)">
-                        <div style="width:42px;height:42px;border-radius:12px;background:rgba(208,149,149,0.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem">🎓</div>
-                        <div><h4 style="font-size:.85rem;font-weight:600;color:var(--text-dark)">教育背景</h4><span style="font-size:.75rem;color:var(--text-muted)">在这里填写学校与专业</span></div>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;background:var(--card-bg);border:1px solid var(--border-color)">
-                        <div style="width:42px;height:42px;border-radius:12px;background:rgba(186,208,188,0.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem">💼</div>
-                        <div><h4 style="font-size:.85rem;font-weight:600;color:var(--text-dark)">目前状态</h4><span style="font-size:.75rem;color:var(--text-muted)">在这里填写当前阶段</span></div>
-                    </div>
-                    <div style="display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;background:var(--card-bg);border:1px solid var(--border-color)">
-                        <div style="width:42px;height:42px;border-radius:12px;background:rgba(168,197,214,0.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem">📍</div>
-                        <div><h4 style="font-size:.85rem;font-weight:600;color:var(--text-dark)">所在城市</h4><span style="font-size:.75rem;color:var(--text-muted)">在这里填写你的位置</span></div>
-                    </div>
+                    <div class="info-card"><div class="info-card-icon pk">🎓</div><div><h4>教育背景</h4><span>在这里填写学校和专业</span></div></div>
+                    <div class="info-card"><div class="info-card-icon gn">💼</div><div><h4>目前状态</h4><span>在这里填写当前阶段</span></div></div>
+                    <div class="info-card"><div class="info-card-icon bl">📍</div><div><h4>所在城市</h4><span>在这里填写你的位置</span></div></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ============ WORKS (Tab + Proj Grid) ============ -->
 <section id="works" class="panel curves">
     <div class="cc">
-        <div class="fade-in" style="margin-bottom:48px">
-            <div class="panel-index">WORKS</div>
-            <h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">作品</h2>
-        </div>
+        <div class="fade-in" style="margin-bottom:48px"><div class="panel-index">WORKS</div><h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">作品</h2></div>
         <div class="tab-switcher fade-in">
             <button class="tab-btn active" data-filter="all">All</button>
             <button class="tab-btn" data-filter="web">Web</button>
             <button class="tab-btn" data-filter="design">Design</button>
             <button class="tab-btn" data-filter="tool">Tool</button>
         </div>
-        <div class="proj-grid" id="projGrid">
-            <div class="proj-card fade-in" data-cat="web">
-                <div class="proj-cover">🖥️</div>
-                <div class="proj-body">
-                    <div class="proj-tags"><span>Vue</span><span>Node.js</span></div>
-                    <h3>项目名称 1</h3>
-                    <p>简短描述这个项目做了什么。</p>
-                </div>
-            </div>
-            <div class="proj-card fade-in" data-cat="web">
-                <div class="proj-cover">📱</div>
-                <div class="proj-body">
-                    <div class="proj-tags"><span>React</span><span>TS</span></div>
-                    <h3>项目名称 2</h3>
-                    <p>简短描述这个项目做了什么。</p>
-                </div>
-            </div>
-            <div class="proj-card fade-in" data-cat="design">
-                <div class="proj-cover">🎨</div>
-                <div class="proj-body">
-                    <div class="proj-tags"><span>Figma</span><span>UI</span></div>
-                    <h3>设计项目 1</h3>
-                    <p>界面设计方案与交互原型。</p>
-                </div>
-            </div>
-            <div class="proj-card fade-in" data-cat="tool">
-                <div class="proj-cover">🔧</div>
-                <div class="proj-body">
-                    <div class="proj-tags"><span>Python</span><span>CLI</span></div>
-                    <h3>工具项目 1</h3>
-                    <p>提升效率的小工具。</p>
-                </div>
-            </div>
+        <div class="proj-grid" id="pg">
+            <div class="proj-card fade-in" data-cat="web"><div class="proj-cover">🖥️</div><div class="proj-body"><div class="proj-tags"><span>Vue</span><span>Node.js</span></div><h3>项目名称 1</h3><p>简短描述这个项目做了什么。</p></div></div>
+            <div class="proj-card fade-in" data-cat="web"><div class="proj-cover">📱</div><div class="proj-body"><div class="proj-tags"><span>React</span><span>TS</span></div><h3>项目名称 2</h3><p>简短描述这个项目做了什么。</p></div></div>
+            <div class="proj-card fade-in" data-cat="design"><div class="proj-cover">🎨</div><div class="proj-body"><div class="proj-tags"><span>Figma</span><span>UI</span></div><h3>设计项目 1</h3><p>界面设计方案与交互原型。</p></div></div>
+            <div class="proj-card fade-in" data-cat="tool"><div class="proj-cover">🔧</div><div class="proj-body"><div class="proj-tags"><span>Python</span><span>CLI</span></div><h3>工具项目 1</h3><p>提升效率的小工具。</p></div></div>
         </div>
     </div>
 </section>
 
-<!-- ============ NOTES ============ -->
 <section id="notes" class="panel curves">
     <div class="cc">
-        <div class="fade-in" style="margin-bottom:48px">
-            <div class="panel-index">NOTES</div>
-            <h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">手記</h2>
-        </div>
+        <div class="fade-in" style="margin-bottom:48px"><div class="panel-index">NOTES</div><h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">手記</h2></div>
         <div class="note-grid">
-            <div class="note-card fade-in">
-                <div class="note-cover">📝</div>
-                <div class="note-body">
-                    <h3>这里是笔记标题</h3>
-                    <p>一段简短的摘要内容，描述这篇笔记的主要信息。</p>
-                    <div class="note-date">2026.07</div>
-                </div>
-            </div>
-            <div class="note-card fade-in">
-                <div class="note-cover">💡</div>
-                <div class="note-body">
-                    <h3>这里是笔记标题</h3>
-                    <p>一段简短的摘要内容，描述这篇笔记的主要信息。</p>
-                    <div class="note-date">2026.06</div>
-                </div>
-            </div>
-            <div class="note-card fade-in">
-                <div class="note-cover">📖</div>
-                <div class="note-body">
-                    <h3>这里是笔记标题</h3>
-                    <p>一段简短的摘要内容，描述这篇笔记的主要信息。</p>
-                    <div class="note-date">2026.05</div>
-                </div>
-            </div>
+            <div class="note-card fade-in"><div class="note-cover">📝</div><div class="note-body"><h3>这里是笔记标题</h3><p>一段简短的摘要内容。</p><div class="note-date">2026.07</div></div></div>
+            <div class="note-card fade-in"><div class="note-cover">💡</div><div class="note-body"><h3>这里是笔记标题</h3><p>一段简短的摘要内容。</p><div class="note-date">2026.06</div></div></div>
+            <div class="note-card fade-in"><div class="note-cover">📖</div><div class="note-body"><h3>这里是笔记标题</h3><p>一段简短的摘要内容。</p><div class="note-date">2026.05</div></div></div>
         </div>
     </div>
 </section>
 
-<!-- ============ STATION (Contact / Timeline) ============ -->
 <section id="contact" class="panel">
     <div class="cc">
-        <div class="fade-in" style="margin-bottom:48px">
-            <div class="panel-index">CONTACT</div>
-            <h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">交流</h2>
-        </div>
-
-        <div class="station fade-in">
-            <div class="station-dot"></div>
-            <div class="station-body">
-                <div class="station-date">Email</div>
-                <h4 class="station-title">hello@ligure.cc</h4>
-                <p class="station-desc">随时发送邮件，我会尽快回复。</p>
-            </div>
-        </div>
-
-        <div class="station station-right fade-in">
-            <div class="station-dot"></div>
-            <div class="station-body">
-                <div class="station-date">GitHub</div>
-                <h4 class="station-title">LPoint0320</h4>
-                <p class="station-desc">查看我的开源项目与代码贡献。</p>
-            </div>
-        </div>
-
-        <div class="station fade-in">
-            <div class="station-dot"></div>
-            <div class="station-body">
-                <div class="station-date">Location</div>
-                <h4 class="station-title">China</h4>
-                <p class="station-desc">在这里填写你的城市或地区。</p>
-            </div>
-        </div>
+        <div class="fade-in" style="margin-bottom:48px"><div class="panel-index">CONTACT</div><h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">交流</h2></div>
+        <div class="station fade-in"><div class="station-dot"></div><div class="station-body"><div class="station-date">Email</div><h4 class="station-title">hello@ligure.cc</h4><p class="station-desc">随时发送邮件，我会尽快回复。</p></div></div>
+        <div class="station station-right fade-in"><div class="station-dot"></div><div class="station-body"><div class="station-date">GitHub</div><h4 class="station-title">LPoint0320</h4><p class="station-desc">查看我的开源项目。</p></div></div>
+        <div class="station fade-in"><div class="station-dot"></div><div class="station-body"><div class="station-date">Location</div><h4 class="station-title">China</h4><p class="station-desc">在这里填写你的城市或地区。</p></div></div>
     </div>
 </section>
 
-<footer class="footer"><div class="cc">© 2026 Ligure · Built with ❤️</div></footer>
+<footer class="footer"><div class="cc">© 2026 Ligure · Built with ♥</div></footer>
 
 <script src="js/main.js"></script>
 </body>

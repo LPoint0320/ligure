@@ -17,16 +17,16 @@
     function icon() {
         const b = document.querySelector('.theme-toggle');
         if (!b) return;
-        const i = { light: '☀️', dark: '🌙', auto: '◐' };
-        b.textContent = i[get()] || '◐';
+        const i = { light: '\u2600\uFE0F', dark: '\uD83C\uDF19', auto: '\u25D0' };
+        b.textContent = i[get()] || '\u25D0';
     }
     apply(get()); icon();
     document.querySelector('.theme-toggle')?.addEventListener('click', cycle);
     matchMedia('(prefers-color-scheme:dark)').addEventListener('change', () => { if (get()==='auto') apply('auto'); });
 
     // --- Orbit menu ---
-    const ot = document.getElementById('orbitTrigger');
-    const om = document.getElementById('orbitMenu');
+    const ot = document.getElementById('ot');
+    const om = document.getElementById('om');
     ot?.addEventListener('click', e => { e.stopPropagation(); om?.classList.toggle('open'); });
     document.addEventListener('click', () => om?.classList.remove('open'));
     document.querySelectorAll('.orbit-item').forEach(item => {
@@ -66,7 +66,7 @@
             document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             const f = btn.dataset.filter;
-            document.querySelectorAll('#projGrid .proj-card').forEach(card => {
+            document.querySelectorAll('#pg .proj-card').forEach(card => {
                 card.style.display = (f==='all' || card.dataset.cat===f) ? '' : 'none';
             });
         });
