@@ -1,0 +1,80 @@
+﻿/* PureSuck 过渡基础变量与状态 */
+
+:root {
+    --ps-motion-enter: 420ms;
+    --ps-motion-enter-list: 520ms;
+    --ps-motion-exit: 260ms;
+    --ps-motion-vt: 380ms;
+
+    --ps-ease-enter: cubic-bezier(0.22, 0.68, 0.35, 1);
+    --ps-ease-exit: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --ps-shift-s: 12px;
+    --ps-shift-m: 22px;
+    --ps-shift-l: 46px;
+
+    --ps-scale-enter: 0.985;
+    --ps-scale-enter-page: 0.972;
+    --ps-scale-enter-list: 0.968;
+    --ps-scale-exit: 0.975;
+    --ps-scale-exit-page: 0.968;
+    --ps-vt-radius: 0.85rem;
+}
+
+html.ps-animating {
+    scroll-behavior: auto !important;
+    scrollbar-gutter: stable;
+}
+
+/* 仅在动画阶段临时开启 will-change */
+html.ps-animating #swup .post,
+html.ps-animating #swup .archive-title,
+html.ps-animating #swup .main-pager,
+html.ps-animating #swup .main-lastinfo {
+    will-change: transform, opacity;
+}
+
+#swup.ps-enter-prime .main {
+    opacity: 0.001;
+}
+
+#swup.ps-vt-active {
+    contain: layout style paint;
+}
+
+/* 列表卡片统一进入，不做 stagger 延迟 */
+
+/* 首屏预载 */
+html.ps-preload-list-enter .post.post--index,
+html.ps-preload-list-enter .archive-title,
+html.ps-preload-list-enter .main-pager,
+html.ps-preload-list-enter .main-lastinfo {
+    opacity: 0 !important;
+    transform: translate3d(0, var(--ps-shift-l), 0) scale(var(--ps-scale-enter-list)) !important;
+}
+
+html.ps-preload-post-enter .post.post--single,
+html.ps-preload-page-enter #swup [data-ps-page-shell] {
+    opacity: 0 !important;
+    transform-origin: 50% 92px !important;
+    transform: translate3d(0, var(--ps-shift-m), 0) scale(var(--ps-scale-enter-page)) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html.ps-preload-list-enter .post.post--index,
+    html.ps-preload-list-enter .archive-title,
+    html.ps-preload-list-enter .main-pager,
+    html.ps-preload-list-enter .main-lastinfo,
+    html.ps-preload-post-enter .post.post--single,
+    html.ps-preload-page-enter #swup [data-ps-page-shell] {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    html.ps-animating *,
+    html.ps-animating *::before,
+    html.ps-animating *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

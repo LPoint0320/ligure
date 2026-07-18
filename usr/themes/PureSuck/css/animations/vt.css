@@ -1,0 +1,67 @@
+﻿/* PureSuck View Transitions */
+
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation: none;
+}
+
+[data-ps-vt-name^="ps-post-"] {
+    contain: layout style paint;
+}
+
+@keyframes ps-vt-shared-old {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+        opacity: 0.96;
+        transform: translate3d(0, -4px, 0) scale(0.995);
+    }
+}
+
+@keyframes ps-vt-shared-new {
+    from {
+        opacity: 0.8;
+        transform: translate3d(0, 8px, 0) scale(0.985);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+html.ps-mode-vt::view-transition-group(*) {
+    animation-duration: var(--ps-motion-vt);
+    animation-timing-function: var(--ps-ease-enter);
+    animation-fill-mode: both;
+}
+
+html.ps-mode-vt::view-transition-old(*):not(::view-transition-old(root)) {
+    animation: ps-vt-shared-old var(--ps-motion-vt) var(--ps-ease-exit) both;
+    border-radius: var(--ps-vt-radius);
+    overflow: hidden;
+}
+
+html.ps-mode-vt::view-transition-new(*):not(::view-transition-new(root)) {
+    animation: ps-vt-shared-new var(--ps-motion-vt) var(--ps-ease-enter) both;
+    border-radius: var(--ps-vt-radius);
+    overflow: hidden;
+}
+
+::view-transition-image-pair(root) {
+    isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    ::view-transition-old(root),
+    ::view-transition-new(root),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}

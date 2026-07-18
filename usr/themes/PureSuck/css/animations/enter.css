@@ -1,0 +1,96 @@
+﻿/* PureSuck 进入动画 */
+
+@keyframes ps-enter-list-card {
+    from {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-l), 0) scale(var(--ps-scale-enter-list));
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes ps-enter-main-card {
+    from {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-m), 0) scale(var(--ps-scale-enter));
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes ps-enter-page-shell {
+    from {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-m), 0) scale(var(--ps-scale-enter-page));
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+}
+
+@keyframes ps-enter-meta-soft {
+    from {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-s), 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+/* 形态 B：普通卡片转场 */
+html.ps-phase-enter.ps-mode-card.ps-enter-list #swup .post.post--index {
+    animation: ps-enter-list-card var(--ps-motion-enter-list) var(--ps-ease-enter) both;
+    animation-delay: 30ms;
+}
+
+html.ps-phase-enter.ps-mode-card.ps-enter-list #swup .archive-title,
+html.ps-phase-enter.ps-mode-card.ps-enter-list #swup .main-pager,
+html.ps-phase-enter.ps-mode-card.ps-enter-list #swup .main-lastinfo {
+    animation: ps-enter-meta-soft calc(var(--ps-motion-enter) - 80ms) var(--ps-ease-enter) both;
+    animation-delay: 100ms;
+}
+
+html.ps-phase-enter.ps-mode-card.ps-enter-post #swup .post.post--single,
+html.ps-phase-enter.ps-mode-card.ps-enter-page #swup [data-ps-page-shell] {
+    animation: ps-enter-main-card var(--ps-motion-enter) var(--ps-ease-enter) both;
+    animation-delay: 60ms;
+}
+
+html.ps-phase-enter.ps-mode-card.ps-enter-page #swup [data-ps-page-shell] {
+    transform-origin: 50% 92px;
+    animation-name: ps-enter-page-shell;
+}
+
+/* 形态 A：VT 列表分层进入（先 morph，再 reveal 非共享元素） */
+html.ps-phase-enter.ps-mode-vt.ps-enter-list:not(.ps-vt-reveal) #swup .post.post--index:not([data-ps-vt-name]) {
+    opacity: 0 !important;
+    transform: translate3d(0, var(--ps-shift-l), 0) scale(var(--ps-scale-enter-list)) !important;
+}
+
+html.ps-phase-enter.ps-mode-vt.ps-enter-list:not(.ps-vt-reveal) #swup .archive-title,
+html.ps-phase-enter.ps-mode-vt.ps-enter-list:not(.ps-vt-reveal) #swup .main-pager,
+html.ps-phase-enter.ps-mode-vt.ps-enter-list:not(.ps-vt-reveal) #swup .main-lastinfo {
+    opacity: 0 !important;
+    transform: translate3d(0, var(--ps-shift-s), 0) !important;
+}
+
+html.ps-phase-enter.ps-mode-vt.ps-enter-list.ps-vt-reveal #swup .post.post--index:not([data-ps-vt-name]) {
+    animation: ps-enter-list-card var(--ps-motion-enter-list) var(--ps-ease-enter) both;
+    animation-delay: 18ms;
+}
+
+html.ps-phase-enter.ps-mode-vt.ps-enter-list.ps-vt-reveal #swup .archive-title,
+html.ps-phase-enter.ps-mode-vt.ps-enter-list.ps-vt-reveal #swup .main-pager,
+html.ps-phase-enter.ps-mode-vt.ps-enter-list.ps-vt-reveal #swup .main-lastinfo {
+    animation: ps-enter-meta-soft calc(var(--ps-motion-enter-list) - 110ms) var(--ps-ease-enter) both;
+    animation-delay: 90ms;
+}
+
+/* 文章内容区域跟随卡片整体进入，不做分段动画 */

@@ -1,0 +1,8 @@
+/* PureSuck 动画样式入口 */
+
+/* 导入顺序：基础设置 → 退出动画 → 进入动画 → 视图过渡 */
+
+@import 'transitions.css';
+@import 'exit.css';
+@import 'enter.css';
+@import 'vt.css';

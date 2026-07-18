@@ -1,0 +1,4 @@
+usr/*.db  
+usr/uploads/*  
+config.zeabur.php  
+zeabur.json  

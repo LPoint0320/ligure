@@ -1,0 +1,18 @@
+# IDE 配置文件
+.claude/
+
+# 临时文件
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+DevPlan.md
+DevRule.md
+RefactorRecord.md
+
+# Theme cache
+cache/
+.perf/
+artifacts/
+node_modules/

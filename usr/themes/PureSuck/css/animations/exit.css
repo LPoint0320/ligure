@@ -1,0 +1,73 @@
+﻿/* PureSuck 退出动画 */
+
+@keyframes ps-exit-list-card {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-s), 0) scale(var(--ps-scale-exit));
+    }
+}
+
+@keyframes ps-exit-main-card {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-m), 0) scale(var(--ps-scale-exit));
+    }
+}
+
+@keyframes ps-exit-page-shell {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-m), 0) scale(var(--ps-scale-exit-page));
+    }
+}
+
+@keyframes ps-vt-soft-fade {
+    from {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        opacity: 0;
+        transform: translate3d(0, var(--ps-shift-s), 0);
+    }
+}
+
+/* 形态 B：普通卡片转场 */
+html.ps-phase-exit.ps-mode-card.ps-exit-list #swup .post.post--index {
+    animation: ps-exit-list-card var(--ps-motion-exit) var(--ps-ease-exit) both;
+}
+
+html.ps-phase-exit.ps-mode-card.ps-exit-list #swup .archive-title,
+html.ps-phase-exit.ps-mode-card.ps-exit-list #swup .main-pager,
+html.ps-phase-exit.ps-mode-card.ps-exit-list #swup .main-lastinfo {
+    animation: ps-vt-soft-fade calc(var(--ps-motion-exit) - 60ms) var(--ps-ease-exit) both;
+}
+
+html.ps-phase-exit.ps-mode-card.ps-exit-post #swup .post.post--single,
+html.ps-phase-exit.ps-mode-card.ps-exit-page #swup [data-ps-page-shell] {
+    animation: ps-exit-main-card var(--ps-motion-exit) var(--ps-ease-exit) both;
+}
+
+html.ps-phase-exit.ps-mode-card.ps-exit-page #swup [data-ps-page-shell] {
+    transform-origin: 50% 92px;
+    animation-name: ps-exit-page-shell;
+}
+
+/* 形态 A：VT 时只让非共享元素退出，避免与 morph 打架 */
+html.ps-phase-exit.ps-mode-vt.ps-exit-list #swup .post.post--index:not([data-ps-vt-name]) {
+    animation: ps-vt-soft-fade calc(var(--ps-motion-vt) - 120ms) var(--ps-ease-exit) both;
+}
+
+/* 文章内容区域跟随卡片整体退出，不做分段动画 */
