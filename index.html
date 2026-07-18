@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Ligure — Developer</title>
+    <meta name="description" content="Ligure — 全栈开发者的个人主页">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="#" class="nav-brand">Ligure<span class="nav-brand-dot">.</span></a>
+        <ul class="nav-menu">
+            <li class="nav-item">
+                <button class="nav-link active" data-section="hero">
+                    <div class="nav-link-content">
+                        <span class="nav-link-index">01</span>
+                        <span class="nav-link-name">Home</span>
+                    </div>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-section="about">
+                    <div class="nav-link-content">
+                        <span class="nav-link-index">02</span>
+                        <span class="nav-link-name">About</span>
+                    </div>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-section="projects">
+                    <div class="nav-link-content">
+                        <span class="nav-link-index">03</span>
+                        <span class="nav-link-name">Works</span>
+                    </div>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="nav-link" data-section="contact">
+                    <div class="nav-link-content">
+                        <span class="nav-link-index">04</span>
+                        <span class="nav-link-name">Contact</span>
+                    </div>
+                </button>
+            </li>
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+        <button class="nav-hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <a href="#hero">· Home</a>
+        <a href="#about">· About</a>
+        <a href="#projects">· Works</a>
+        <a href="#contact">· Contact</a>
+    </div>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <span class="hero-tag">✦ Available for Work</span>
+        <h1>
+            你好，我是 <span class="accent">Ligure</span>
+        </h1>
+        <p>
+            热爱代码与设计，专注于构建优雅且实用的数字产品。    
+            相信技术的力量可以改变世界，一行代码一步脚印。
+        </p>
+        <div class="hero-links">
+            <a href="#projects" class="btn btn-primary">查看作品</a>
+            <a href="#contact" class="btn btn-outline">联系我</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">02 · About</div>
+                <h2 class="section-title">关于我</h2>
+                <p class="section-desc">一段简短的个人介绍，让访问者快速了解你是谁、擅长什么。</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <p>我是一名热爱技术的创作者。从第一次接触到代码，就被「创造」的感觉深深吸引。无论是前端界面、后端逻辑，还是设计工具，我都乐于探索和实践。</p>
+                    <p>目前专注于 Web 全栈开发，同时对 UI/UX 设计保持高度热情。我相信好的产品 = 优雅的设计 × 扎实的工程。</p>
+
+                    <div class="about-highlights">
+                        <div class="highlight-card">
+                            <span class="icon">🎓</span>
+                            <h3>教育背景</h3>
+                            <p>在这里填写学校与专业</p>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="icon">💼</span>
+                            <h3>目前状态</h3>
+                            <p>在这里填写当前阶段</p>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="icon">📍</span>
+                            <h3>所在城市</h3>
+                            <p>在这里填写你的位置</p>
+                        </div>
+                        <div class="highlight-card">
+                            <span class="icon">🛠️</span>
+                            <h3>技术栈</h3>
+                            <p>React · Vue · Node.js · Python</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual fade-in">
+                    <div class="about-card">
+                        <div class="about-card-icon pink">🎯</div>
+                        <div>
+                            <h4>技术方向</h4>
+                            <span>全栈 Web 开发 & UI/UX 设计</span>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon green">⭐</div>
+                        <div>
+                            <h4>核心优势</h4>
+                            <span>快速学习 · 独立交付 · 注重细节</span>
+                        </div>
+                    </div>
+                    <div class="about-card">
+                        <div class="about-card-icon blue">📫</div>
+                        <div>
+                            <h4>联系方式</h4>
+                            <span>hello@ligure.cc</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Skills</div>
+                <h2 class="section-title">技能 & 工具</h2>
+                <p class="section-desc">日常开发中用到的技术栈和生产力工具。</p>
+            </div>
+            <div class="fade-in">
+                <div class="skills-cloud" style="justify-content:center;">
+                    <span class="skill-tag">JavaScript / TypeScript</span>
+                    <span class="skill-tag">React / Next.js</span>
+                    <span class="skill-tag">Vue / Nuxt</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">HTML / CSS</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Git / GitHub</span>
+                    <span class="skill-tag">Figma</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">03 · Works</div>
+                <h2 class="section-title">作品展示</h2>
+                <p class="section-desc">一些我参与或独立完成的项目，涵盖 Web 应用、工具和设计作品。</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-card-image" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));">
+                        <span style="font-size:3rem;">🖥️</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-tags">
+                            <span>Vue</span><span>Node.js</span>
+                        </div>
+                        <h3>项目名称 1</h3>
+                        <p>简短描述这个项目做了什么、用到了什么技术、解决了什么问题。</p>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-image" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));">
+                        <span style="font-size:3rem;">📱</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-tags">
+                            <span>React</span><span>TypeScript</span>
+                        </div>
+                        <h3>项目名称 2</h3>
+                        <p>简短描述这个项目做了什么、用到了什么技术、解决了什么问题。</p>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-image" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));">
+                        <span style="font-size:3rem;">🎨</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-tags">
+                            <span>Design</span><span>Figma</span>
+                        </div>
+                        <h3>项目名称 3</h3>
+                        <p>简短描述这个项目做了什么、用到了什么技术、解决了什么问题。</p>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-card-image" style="background: linear-gradient(135deg, var(--bg-secondary), var(--bg-primary));">
+                        <span style="font-size:3rem;">🔧</span>
+                    </div>
+                    <div class="project-card-body">
+                        <div class="project-card-tags">
+                            <span>Python</span><span>API</span>
+                        </div>
+                        <h3>项目名称 4</h3>
+                        <p>简短描述这个项目做了什么、用到了什么技术、解决了什么问题。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <div class="section-label">Experience</div>
+                <h2 class="section-title">经历</h2>
+                <p class="section-desc">我的学习与成长轨迹。</p>
+            </div>
+            <div class="timeline fade-in">
+                <div class="timeline-item">
+                    <h4>开始接触编程</h4>
+                    <div class="date">20XX 年</div>
+                    <p>从第一行代码开始，踏上了探索技术的旅程。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>第一个完整项目</h4>
+                    <div class="date">20XX 年</div>
+                    <p>独立完成了第一个从设计到部署的全栈项目。</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>现在</h4>
+                    <div class="date">至今</div>
+                    <p>持续学习，持续创造，持续成长。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container fade-in">
+            <div class="section-label">04 · Contact</div>
+            <h2 class="section-title">联系我</h2>
+            <p class="section-desc" style="margin-left:auto;margin-right:auto;">有项目合作或其他想法？随时联系！</p>
+            <div class="contact-links">
+                <a href="mailto:hello@ligure.cc" class="contact-link">📧 hello@ligure.cc</a>
+                <a href="https://github.com/LPoint0320" target="_blank" class="contact-link">💻 GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            © 2026 Ligure · Built with ❤️
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
