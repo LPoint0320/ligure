@@ -2,157 +2,231 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ligure — Developer</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Ligure — Home</title>
     <meta name="description" content="Ligure — 个人主页">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 
-    <!-- Nav -->
-    <nav class="nav">
-        <a href="#" class="nav-brand">Ligure<span class="nav-brand-dot">.</span></a>
-        <ul class="nav-menu">
-            <li><button class="nav-link active" data-section="hero"><div class="nav-link-row"><span class="nav-link-index">01</span><span class="nav-link-name">Home</span></div></button></li>
-            <li><button class="nav-link" data-section="about"><div class="nav-link-row"><span class="nav-link-index">02</span><span class="nav-link-name">About</span></div></button></li>
-            <li><button class="nav-link" data-section="works"><div class="nav-link-row"><span class="nav-link-index">03</span><span class="nav-link-name">Works</span></div></button></li>
-            <li><button class="nav-link" data-section="contact"><div class="nav-link-row"><span class="nav-link-index">04</span><span class="nav-link-name">Contact</span></div></button></li>
-        </ul>
-        <button class="theme-toggle" aria-label="Toggle theme" title="Auto · Follow system">◐</button>
-        <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </nav>
-
-    <div class="mobile-menu">
-        <a href="#hero">· Home</a>
-        <a href="#about">· About</a>
-        <a href="#works">· Works</a>
-        <a href="#contact">· Contact</a>
+<!-- Orbit — Corner Menu -->
+<div class="orbit-control">
+    <button class="orbit-trigger" id="orbitTrigger" title="Menu">…</button>
+    <div class="orbit-menu" id="orbitMenu">
+        <div class="orbit-user">
+            <div class="orbit-avatar">L</div>
+            <span class="orbit-name">Ligure</span>
+        </div>
+        <div class="orbit-divider"></div>
+        <button class="orbit-item active" data-page="home">
+            <span class="orbit-icon">✦</span> Home
+        </button>
+        <button class="orbit-item" data-page="about">
+            <span class="orbit-icon">◉</span> About
+        </button>
+        <button class="orbit-item" data-page="works">
+            <span class="orbit-icon">◇</span> Works
+        </button>
+        <button class="orbit-item" data-page="contact">
+            <span class="orbit-icon">◎</span> Contact
+        </button>
     </div>
+</div>
 
-    <!-- Hero -->
-    <section id="hero" class="hero">
-        <div class="hero-copy fade-in">
-            <p class="hero-eyebrow">✦ Hello, World</p>
-            <h1 class="hero-title">你好，我是<span class="accent"> Ligure</span></h1>
-            <p class="hero-subtitle">热爱代码与设计，专注于构建优雅且实用的数字产品。</p>
-            <div class="hero-actions">
-                <a href="#works" class="btn btn-primary">查看作品</a>
-                <a href="#contact" class="btn btn-outline">联系我</a>
-            </div>
-        </div>
-        <div class="hero-visual fade-in">
-            <div class="hero-avatar">👋</div>
-        </div>
-        <div class="scroll-cue">Scroll</div>
-    </section>
+<!-- Nav -->
+<nav class="nav">
+    <a href="#" class="nav-brand">Ligure<span class="nav-brand-dot">.</span></a>
+    <ul class="nav-menu">
+        <li><button class="nav-link active" data-section="hero"><div class="nav-link-row"><span class="nav-link-index">01</span><span class="nav-link-name">Home</span></div></button></li>
+        <li><button class="nav-link" data-section="about"><div class="nav-link-row"><span class="nav-link-index">02</span><span class="nav-link-name">About</span></div></button></li>
+        <li><button class="nav-link" data-section="works"><div class="nav-link-row"><span class="nav-link-index">03</span><span class="nav-link-name">Works</span></div></button></li>
+        <li><button class="nav-link" data-section="contact"><div class="nav-link-row"><span class="nav-link-index">04</span><span class="nav-link-name">Contact</span></div></button></li>
+    </ul>
+    <button class="theme-toggle" title="Auto">◐</button>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
 
-    <!-- About -->
-    <section id="about" class="section section-alt">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-label">02 · About</div>
-                <h2 class="section-title">关于我</h2>
-                <p class="section-desc">简短介绍，让访问者快速了解你。</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-text fade-in">
-                    <p>我是一名热爱技术的创作者。从第一次接触到代码，就被创造的感觉深深吸引。前端、后端、设计，我都乐于探索和实践。</p>
-                    <p>目前专注于 Web 全栈开发，相信好的产品 = 优雅的设计 × 扎实的工程。</p>
-                </div>
-                <div class="about-cards fade-in">
-                    <div class="about-card">
-                        <div class="about-card-icon pink">🎓</div>
-                        <div><h4>教育背景</h4><span>在这里填写学校和专业</span></div>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-icon green">💼</div>
-                        <div><h4>目前状态</h4><span>在这里填写当前阶段</span></div>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-icon blue">📍</div>
-                        <div><h4>所在城市</h4><span>在这里填写你的位置</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="mobile-menu">
+    <a href="#hero">· Home</a>
+    <a href="#about">· About</a>
+    <a href="#works">· Works</a>
+    <a href="#contact">· Contact</a>
+</div>
 
-    <!-- Works -->
-    <section id="works" class="section">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-label">03 · Works</div>
-                <h2 class="section-title">作品展示</h2>
-                <p class="section-desc">一些独立完成或参与的项目。</p>
+<!-- ============ HERO ============ -->
+<section id="hero" class="hero">
+    <div class="hero-copy fade-in">
+        <p class="hero-eyebrow">✦ Hello, World</p>
+        <h1 class="hero-title">你好，我是<span class="accent"> Ligure</span></h1>
+        <p class="hero-subtitle">热爱代码与设计，专注于构建优雅且实用的数字产品。</p>
+        <div class="hero-actions">
+            <a href="#works" class="btn btn-primary">查看作品</a>
+            <a href="#contact" class="btn btn-outline">联系我</a>
+        </div>
+    </div>
+    <div class="hero-visual fade-in">
+        <div class="hero-avatar">👋</div>
+    </div>
+</section>
+
+<!-- ============ ABOUT (Panel) ============ -->
+<section id="about" class="panel curves">
+    <div class="cc">
+        <div class="panel-inner">
+            <div class="panel-left fade-in">
+                <div class="panel-index">ABOUT</div>
+                <h2 class="panel-title">关於我</h2>
+                <div class="panel-desc">
+                    <p>我是一名热爱技术的创作者。从第一次接触到代码，就被创造的感觉深深吸引。</p>
+                    <p>前端、后端、设计，我都乐于探索，追求优雅与实用的平衡。</p>
+                </div>
             </div>
-            <div class="projects-grid">
-                <div class="project-card fade-in">
-                    <div class="project-img">🖥️</div>
-                    <div class="project-body">
-                        <div class="project-tags"><span>Vue</span><span>Node.js</span></div>
-                        <h3>项目名称 1</h3>
-                        <p>简短描述这个项目做了什么。</p>
+            <div class="panel-right fade-in">
+                <div style="display:flex;flex-direction:column;gap:14px;width:100%">
+                    <div style="display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;background:var(--card-bg);border:1px solid var(--border-color)">
+                        <div style="width:42px;height:42px;border-radius:12px;background:rgba(208,149,149,0.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem">🎓</div>
+                        <div><h4 style="font-size:.85rem;font-weight:600;color:var(--text-dark)">教育背景</h4><span style="font-size:.75rem;color:var(--text-muted)">在这里填写学校与专业</span></div>
                     </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-img">📱</div>
-                    <div class="project-body">
-                        <div class="project-tags"><span>React</span><span>TS</span></div>
-                        <h3>项目名称 2</h3>
-                        <p>简短描述这个项目做了什么。</p>
+                    <div style="display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;background:var(--card-bg);border:1px solid var(--border-color)">
+                        <div style="width:42px;height:42px;border-radius:12px;background:rgba(186,208,188,0.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem">💼</div>
+                        <div><h4 style="font-size:.85rem;font-weight:600;color:var(--text-dark)">目前状态</h4><span style="font-size:.75rem;color:var(--text-muted)">在这里填写当前阶段</span></div>
                     </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-img">🎨</div>
-                    <div class="project-body">
-                        <div class="project-tags"><span>Design</span><span>Figma</span></div>
-                        <h3>项目名称 3</h3>
-                        <p>简短描述这个项目做了什么。</p>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-img">🔧</div>
-                    <div class="project-body">
-                        <div class="project-tags"><span>Python</span><span>API</span></div>
-                        <h3>项目名称 4</h3>
-                        <p>简短描述这个项目做了什么。</p>
+                    <div style="display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:16px;background:var(--card-bg);border:1px solid var(--border-color)">
+                        <div style="width:42px;height:42px;border-radius:12px;background:rgba(168,197,214,0.12);display:flex;align-items:center;justify-content:center;font-size:1.2rem">📍</div>
+                        <div><h4 style="font-size:.85rem;font-weight:600;color:var(--text-dark)">所在城市</h4><span style="font-size:.75rem;color:var(--text-muted)">在这里填写你的位置</span></div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Timeline -->
-    <section class="section section-alt">
-        <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-label">Timeline</div>
-                <h2 class="section-title">经历</h2>
+<!-- ============ WORKS (Tab + Proj Grid) ============ -->
+<section id="works" class="panel curves">
+    <div class="cc">
+        <div class="fade-in" style="margin-bottom:48px">
+            <div class="panel-index">WORKS</div>
+            <h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">作品</h2>
+        </div>
+        <div class="tab-switcher fade-in">
+            <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="web">Web</button>
+            <button class="tab-btn" data-filter="design">Design</button>
+            <button class="tab-btn" data-filter="tool">Tool</button>
+        </div>
+        <div class="proj-grid" id="projGrid">
+            <div class="proj-card fade-in" data-cat="web">
+                <div class="proj-cover">🖥️</div>
+                <div class="proj-body">
+                    <div class="proj-tags"><span>Vue</span><span>Node.js</span></div>
+                    <h3>项目名称 1</h3>
+                    <p>简短描述这个项目做了什么。</p>
+                </div>
             </div>
-            <div class="timeline fade-in">
-                <div class="timeline-item"><h4>开始编程</h4><div class="t-date">20XX</div><p>从第一行代码开始探索技术的世界。</p></div>
-                <div class="timeline-item"><h4>第一个完整项目</h4><div class="t-date">20XX</div><p>独立完成从设计到部署的全栈项目。</p></div>
-                <div class="timeline-item"><h4>现在</h4><div class="t-date">至今</div><p>持续学习，持续创造。</p></div>
+            <div class="proj-card fade-in" data-cat="web">
+                <div class="proj-cover">📱</div>
+                <div class="proj-body">
+                    <div class="proj-tags"><span>React</span><span>TS</span></div>
+                    <h3>项目名称 2</h3>
+                    <p>简短描述这个项目做了什么。</p>
+                </div>
+            </div>
+            <div class="proj-card fade-in" data-cat="design">
+                <div class="proj-cover">🎨</div>
+                <div class="proj-body">
+                    <div class="proj-tags"><span>Figma</span><span>UI</span></div>
+                    <h3>设计项目 1</h3>
+                    <p>界面设计方案与交互原型。</p>
+                </div>
+            </div>
+            <div class="proj-card fade-in" data-cat="tool">
+                <div class="proj-cover">🔧</div>
+                <div class="proj-body">
+                    <div class="proj-tags"><span>Python</span><span>CLI</span></div>
+                    <h3>工具项目 1</h3>
+                    <p>提升效率的小工具。</p>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact-section">
-        <div class="container fade-in">
-            <div class="section-label">04 · Contact</div>
-            <h2 class="section-title">联系我</h2>
-            <p class="section-desc" style="margin:12px auto 0;">有项目合作或其他想法？随时联系！</p>
-            <div class="contact-links">
-                <a href="mailto:hello@ligure.cc" class="contact-link">📧 hello@ligure.cc</a>
-                <a href="https://github.com/LPoint0320" target="_blank" rel="noopener" class="contact-link">💻 GitHub</a>
+<!-- ============ NOTES ============ -->
+<section id="notes" class="panel curves">
+    <div class="cc">
+        <div class="fade-in" style="margin-bottom:48px">
+            <div class="panel-index">NOTES</div>
+            <h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">手記</h2>
+        </div>
+        <div class="note-grid">
+            <div class="note-card fade-in">
+                <div class="note-cover">📝</div>
+                <div class="note-body">
+                    <h3>这里是笔记标题</h3>
+                    <p>一段简短的摘要内容，描述这篇笔记的主要信息。</p>
+                    <div class="note-date">2026.07</div>
+                </div>
+            </div>
+            <div class="note-card fade-in">
+                <div class="note-cover">💡</div>
+                <div class="note-body">
+                    <h3>这里是笔记标题</h3>
+                    <p>一段简短的摘要内容，描述这篇笔记的主要信息。</p>
+                    <div class="note-date">2026.06</div>
+                </div>
+            </div>
+            <div class="note-card fade-in">
+                <div class="note-cover">📖</div>
+                <div class="note-body">
+                    <h3>这里是笔记标题</h3>
+                    <p>一段简短的摘要内容，描述这篇笔记的主要信息。</p>
+                    <div class="note-date">2026.05</div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer class="footer"><div class="container">© 2026 Ligure · Built with ❤️</div></footer>
+<!-- ============ STATION (Contact / Timeline) ============ -->
+<section id="contact" class="panel">
+    <div class="cc">
+        <div class="fade-in" style="margin-bottom:48px">
+            <div class="panel-index">CONTACT</div>
+            <h2 class="panel-title" style="font-size:clamp(1.8rem,3vw,2.4rem)">交流</h2>
+        </div>
 
-    <script src="js/main.js"></script>
+        <div class="station fade-in">
+            <div class="station-dot"></div>
+            <div class="station-body">
+                <div class="station-date">Email</div>
+                <h4 class="station-title">hello@ligure.cc</h4>
+                <p class="station-desc">随时发送邮件，我会尽快回复。</p>
+            </div>
+        </div>
+
+        <div class="station station-right fade-in">
+            <div class="station-dot"></div>
+            <div class="station-body">
+                <div class="station-date">GitHub</div>
+                <h4 class="station-title">LPoint0320</h4>
+                <p class="station-desc">查看我的开源项目与代码贡献。</p>
+            </div>
+        </div>
+
+        <div class="station fade-in">
+            <div class="station-dot"></div>
+            <div class="station-body">
+                <div class="station-date">Location</div>
+                <h4 class="station-title">China</h4>
+                <p class="station-desc">在这里填写你的城市或地区。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer"><div class="cc">© 2026 Ligure · Built with ❤️</div></footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
