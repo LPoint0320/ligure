@@ -6,31 +6,31 @@ define('__TYPECHO_ADMIN_DIR__', '/admin/');
 require_once __TYPECHO_ROOT_DIR__ . '/var/Typecho/Common.php';
 \Typecho\Common::init();
 
-// Railway / Vercel / cloud env — support multiple env var formats
- = getenv('MYSQL_URL') ?: getenv('DATABASE_URL') ?: '';
-if () {
-     = parse_url();
-    System.Management.Automation.Internal.Host.InternalHost = ['host'] ?? '127.0.0.1';
-     = ['port'] ?? 3306;
-     = ['user'] ?? 'root';
-     = ['pass'] ?? '';
-     = ltrim(['path'] ?? '', '/');
+// Vercel / Railway / cloud env — support multiple env var formats
+$mysqlUrl = getenv('MYSQL_URL') ?: getenv('DATABASE_URL') ?: '';
+if ($mysqlUrl) {
+    $parts = parse_url($mysqlUrl);
+    $host = $parts['host'] ?? '127.0.0.1';
+    $port = $parts['port'] ?? 3306;
+    $user = $parts['user'] ?? 'root';
+    $pass = $parts['pass'] ?? '';
+    $dbname = ltrim($parts['path'] ?? '', '/');
 } else {
-    System.Management.Automation.Internal.Host.InternalHost = getenv('MYSQLHOST') ?: getenv('MYSQL_HOST') ?: '127.0.0.1';
-     = getenv('MYSQLPORT') ?: getenv('MYSQL_PORT') ?: 3306;
-     = getenv('MYSQLUSER') ?: getenv('MYSQL_USER') ?: 'root';
-     = getenv('MYSQLPASSWORD') ?: getenv('MYSQL_PASSWORD') ?: '';
-     = getenv('MYSQLDATABASE') ?: getenv('MYSQL_DATABASE') ?: 'typecho';
+    $host = getenv('MYSQLHOST') ?: getenv('MYSQL_HOST') ?: '127.0.0.1';
+    $port = getenv('MYSQLPORT') ?: getenv('MYSQL_PORT') ?: 3306;
+    $user = getenv('MYSQLUSER') ?: getenv('MYSQL_USER') ?: 'root';
+    $pass = getenv('MYSQLPASSWORD') ?: getenv('MYSQL_PASSWORD') ?: '';
+    $dbname = getenv('MYSQLDATABASE') ?: getenv('MYSQL_DATABASE') ?: 'typecho';
 }
 
- = new \Typecho\Db('Pdo_Mysql', 'typecho_');
-->addServer(array(
-  'host' => System.Management.Automation.Internal.Host.InternalHost,
-  'port' => intval(),
-  'user' => ,
-  'password' => ,
-  'database' => ,
+$db = new \Typecho\Db('Pdo_Mysql', 'typecho_');
+$db->addServer(array(
+  'host' => $host,
+  'port' => intval($port),
+  'user' => $user,
+  'password' => $pass,
+  'database' => $dbname,
   'charset' => 'utf8mb4',
   'engine' => 'InnoDB',
 ), \Typecho\Db::READ | \Typecho\Db::WRITE);
-\Typecho\Db::set();
+\Typecho\Db::set($db);

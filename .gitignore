@@ -1,4 +1,5 @@
-usr/*.db  
-usr/uploads/*  
-config.zeabur.php  
-zeabur.json  
+﻿usr/*.db
+usr/uploads/*
+config.zeabur.php
+zeabur.json
+railway.json
