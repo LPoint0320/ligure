@@ -1,41 +1,66 @@
-﻿/* ============================================
-   ligure.cc — Main JavaScript
-   ============================================ */
+﻿/* ligure.cc — Theme & Navigation */
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // --- Theme Toggle ---
-    const themeToggle = document.querySelector('.theme-toggle');
+(function() {
     const html = document.documentElement;
+    const STORAGE_KEY = 'theme-mode'; // 'light' | 'dark' | 'auto'
 
-    // Check saved theme
-    const saved = localStorage.getItem('theme');
-    if (saved === 'dark') html.setAttribute('data-theme', 'dark');
-    updateThemeIcon();
+    // --- 3-mode theme ---
+    function getTheme() {
+        return localStorage.getItem(STORAGE_KEY) || 'auto';
+    }
+    function saveTheme(mode) { localStorage.setItem(STORAGE_KEY, mode); }
 
-    themeToggle?.addEventListener('click', () => {
-        const isDark = html.getAttribute('data-theme') === 'dark';
-        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-        localStorage.setItem('theme', isDark ? 'light' : 'dark');
-        updateThemeIcon();
-    });
-
-    function updateThemeIcon() {
-        if (!themeToggle) return;
-        const isDark = html.getAttribute('data-theme') === 'dark';
-        themeToggle.textContent = isDark ? '☀️' : '🌙';
+    function applyTheme(mode) {
+        if (mode === 'auto') {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            html.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+        } else {
+            html.setAttribute('data-theme', mode);
+        }
     }
 
-    // --- Mobile Menu ---
+    function getEffectiveTheme() {
+        return html.getAttribute('data-theme') || 'light';
+    }
+
+    function cycleTheme() {
+        const modes = ['auto', 'light', 'dark'];
+        const current = getTheme();
+        const idx = modes.indexOf(current);
+        const next = modes[(idx + 1) % modes.length];
+        saveTheme(next);
+        applyTheme(next);
+        updateToggleIcon();
+    }
+
+    function updateToggleIcon() {
+        const btn = document.querySelector('.theme-toggle');
+        if (!btn) return;
+        const mode = getTheme();
+        const icons = { light: '☀️', dark: '🌙', auto: '◐' };
+        btn.textContent = icons[mode] || '◐';
+        btn.title = mode === 'auto' ? 'Auto · 跟随系统' : mode === 'dark' ? 'Dark · 夜间模式' : 'Light · 日间模式';
+    }
+
+    // Init
+    applyTheme(getTheme());
+    updateToggleIcon();
+
+    // Toggle button
+    document.querySelector('.theme-toggle')?.addEventListener('click', cycleTheme);
+
+    // Listen for system changes when in auto mode
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        if (getTheme() === 'auto') applyTheme('auto');
+    });
+
+    // --- Mobile menu ---
     const hamburger = document.querySelector('.nav-hamburger');
     const mobileMenu = document.querySelector('.mobile-menu');
-
     hamburger?.addEventListener('click', () => {
         hamburger.classList.toggle('open');
         mobileMenu?.classList.toggle('open');
     });
-
-    // Close mobile menu on link click
     mobileMenu?.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             hamburger?.classList.remove('open');
@@ -43,34 +68,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Nav Active ---
+    // --- Nav active + smooth scroll ---
+    document.querySelectorAll('.nav-link[data-section]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const id = btn.dataset.section;
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link[data-section]');
-
-    function updateActiveNav() {
+    function updateNav() {
         let current = '';
-        sections.forEach(section => {
-            const top = section.offsetTop - 100;
-            if (window.scrollY >= top) {
-                current = section.getAttribute('id');
-            }
+        sections.forEach(s => {
+            if (window.scrollY >= s.offsetTop - 120) current = s.id;
         });
         navLinks.forEach(link => {
             link.classList.toggle('active', link.dataset.section === current);
         });
     }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
 
-    window.addEventListener('scroll', updateActiveNav, { passive: true });
-    updateActiveNav();
-
-    // --- Fade-in on scroll ---
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+    // --- Fade-in ---
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-});
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+})();
