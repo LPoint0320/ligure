@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 define('__TYPECHO_ROOT_DIR__', dirname(__FILE__));
 define('__TYPECHO_PLUGIN_DIR__', '/usr/plugins');
 define('__TYPECHO_THEME_DIR__', '/usr/themes');

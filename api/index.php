@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Vercel PHP entry point for Typecho
  */
